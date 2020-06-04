@@ -6,3 +6,106 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Gothic+A1:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+  padding: 20px;
+  border: solid 1px;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  padding: 20px;
+  border: solid 1px;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
+}
+
+.question-container p {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form#question-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+label {
+  display: flex;
+  padding: 10px;
+}
+
+.m-choice {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  font-family: 'Gothic A1', sans-serif;
+  margin-top: 10px;
+}
+
+.h1-container {
+  font-family: 'Anonymous Pro', monospace;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+p {
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 20px;
+}
+
+.action-btn {
+  margin: 40px 20px;
+  padding: 5px;
+  font-family: 'Gothic A1', sans-serif;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
+}
+
+.btn-2 {
+  margin: 40px 20px;
+  padding: 5px;
+  font-family: 'Gothic A1', sans-serif;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
+}
