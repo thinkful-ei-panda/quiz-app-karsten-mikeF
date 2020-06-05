@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz App</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="app.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header></header>
+    <main>
+      <!-- Welcome Page -->
+      <div class="welcome-container">
+        <h1>Cinequiz</h1>
+        <p>Welcome to CineQuiz.</p><p>Here we test your knowledge of cinema history.</p>
+        <button type="submit" class="action-btn">ACTION!</button>
+      </div>
+
+      <!-- Questions Page -->
+
+      <div class='question-container'>                            
+        <form id='question-form'>
+          <p>Question _  / 5</p>
+          <p> Current Question </p>
+            <input type='radio' id='' name='answer' value=''>
+            <label for='radio'>answer</label>
+            <input type='radio' id='' name='answer' value=''>
+            <label for='radio'>answer</label>
+            <input type='radio' id='' name='answer' value=''>
+            <label for='radio'>answer</label>
+            <input type='radio' id='' name='answer' value=''>
+            <label for='radio'>answer</label>
+          <button type="submit" class="test-btn">Test Your Might!</button>
+          <p>Correct _ / 5</p>
+        </form>
+       </div>
+
+      <!-- Current State -->
+
+      <div class="current-container">
+        <h1>Current Progress</h1>
+        <p>You scored _ of 5 correct</p>
+        <button type="submit" class="continue-btn">Next</button>
+      </div>
+
+       <!-- Results Page -->
+
+       <div class="results-container">
+        <h1>Results</h1>
+        <p>You scored _ of 5 correct</p>
+        <button type="submit" class="continue-btn">1UP</button>
+      </div>
+
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+    <script src="store.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
