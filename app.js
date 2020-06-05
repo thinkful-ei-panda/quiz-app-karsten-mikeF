@@ -1,55 +1,11 @@
 'use strict';
+
 $( document ).ready();
-
-/**
- * Example store structure
- */
-const STORE = {
-  // 5 or more questions are required
-  questions: [
-    {
-      question: 'Who directed "Back to the Future" ?',
-      answers: ['a. Robert Zemeckis', 'b. James Cameron', 'c. Martin Scorsese'],
-      correctAnswer: 0
-    },
-    {
-      question: 'How many "Terminator" films are there?',
-      answers: ['a. 2', 'b. 6', 'c. 7'],
-      correctAnswer: 1
-    },
-    {
-      question: 'Who directed "The Departed" ?',
-      answers: ['a. Martin Scorcese', 'b. Steven Spielberg', 'c. George Lucas'],
-      correctAnswer: 0
-    },
-    {
-      question: 'What year was "Avatar" released?',
-      answers: ['a. 2015', 'b. 2006', 'c. 2009'],
-      correctAnswer: 2
-    },
-    {
-      question: 'What year was "The Matrix" released?',
-      answers: ['a. 2002', 'b. 1995', 'c. 1999'],
-      correctAnswer: 2
-    },
-  ],
-  quizStarted: false,
-  questionNumber: 0,
-  score: 0,
-};
-
-// const STORE = {
-//   questions: [ {...}, {...}, {...}, {...}, {...} ],
-//   quizStarted: false,
-//   questionNumber: 0,
-//   score: 0,
-// };
-
 /**
  * 
  * Technical requirements:
  * 
- * Your app should include a render() function, that regenerates the view each time the store is updated. 
+ * Your app should include a render() function, that regenerates the view each time the store is updated.                                //event handlers go here
  * See your course material, consult your instructor, and reference the slides for more details.
  *
  * NO additional HTML elements should be added to the index.html file.
@@ -64,45 +20,54 @@ const STORE = {
 
 function generateStartPage() {
 
-  $('main').html(`<div class="welcome-container">
+  return `<div class="welcome-container">
   <h1 class="h1-container">Cinequiz</h1>
     <p>Welcome to CineQuiz.</p><p>Here we test your knowledge of cinema history.</p>
     <button type="submit" class="action-btn">ACTION!</button>
-  </div>`);
+  </div>`;
 }
+/*************************************************** */
 
-generateStartPage();                                                          // call to generate start page
-
-$('.action-btn').click(function( event ) {                                   // IT WORKED!!!    //CLICK EVENT MOVE TO BOTTOM!!!
-  console.log(`clicking action`);
-  generateQuestionsHtml(0);
-});
+/*************************************************** */
 
 function generateQuestionsHtml(qNum) {
-
+  event.preventDefault();
   //had to use let because const didn't let us reassign questionHTML as the questions loop.
+ 
   let questionHTML = `<div class='question-container'>                            
     <form id='question-form'>
+      
+      <p>Question ${qNum + 1} / 5</p>
       <p>${STORE.questions[qNum].question}</p>`;
   
-  for (let i = 0; i < STORE.questions[qNum].answers.length; i++){             //looping through each question
+  for (let i = 0; i < STORE.questions[qNum].answers.length; i++){                             //looping through each question
     questionHTML += `<div class="m-choice">
-      <input type='radio' id='answer${i}' name='answer' value='${i}'>
+      <input type='radio' id='answer${i}' name='answer' value='${i}' required='required'>
         <label for='answer${i}'>${STORE.questions[qNum].answers[i]}</label>
     </div>`;
   }
-  questionHTML += `<button type="submit" class="btn-2">Test Your Might!</button>
+  questionHTML += `<button type="submit" class="test-btn">Test Your Might!</button>
     </form>
-  </div>`;
-  
+  </div>
+  <p>Correct ${STORE.score} / 5</p>`;
+
   $('main').html(questionHTML);
 }
 
-// generateQuestionsHtml(0);
-// generateQuestionsHtml(1);
-// generateQuestionsHtml(2);
-// generateQuestionsHtml(3);
-// generateQuestionsHtml(4);
+function generateCorrect() {
+  return `<div class="next-class">
+    <h2> Correct!!! </h2>
+    <button class='next-btn'>On to the next</btn>
+    </div>`;
+}
+
+function generateIncorrect() {
+
+}
+
+function generateResults() {
+
+}
 
 /************************************************************************************************* */
 
@@ -110,28 +75,88 @@ function generateQuestionsHtml(qNum) {
 //When we iterate through an array and return a NEW array with the same length but altered
 ////element, use the .map function
 
-//Call our template generator on each item in the array
+/*************************************************************************************************
 
-//Convert the results into a single string
+/********** RENDER FUNCTION(S) **********/
 
-// renderShoppingList() - put it all together
-//Generate the new HTML with our generator function
-//Apply the HTML to the DOM
+function renderStartPage() {
+  const html = generateStartPage();                                 // call to generate start page
+  $('main').html(html);
+}
 
+function renderQuestionsHtml() {
+  $('main').html(html);
+}
 
-// const SHOPPING_LIST_EL = $('.shopping-list');
-
-// function renderShoppingList() {
-//   const html = generateShoppingListElements(STORE);
-//   SHOPPING_LIST_EL.html(html);  
+// function renderCorrect() {
+//   const html = generateCorrect();
+//   console.log('rendering correct');
+//   $('main').html(html);
 // }
+
+// function renderIncorrect() {
+//   const html = generateIncorrect();
+//   console.log('rendering incorrect');
+//   $('main').html(html);
+// }
+
+
+
 
 // These functions return HTML templates
 
-/********** RENDER FUNCTION(S) **********/
+// generateQuestionsHtml(0);
+// generateQuestionsHtml(1);
+// generateQuestionsHtml(2);
+// generateQuestionsHtml(3);
+// generateQuestionsHtml(4);
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
 /********** EVENT HANDLER FUNCTIONS **********/
 
-// These functions handle events (submit, click, etc)
+$('main').click('.action-btn', function(event) {         // IT WORKED!!!    //CLICK EVENT MOVE TO BOTTOM!!!
+  console.log('Quiz Start Commence!');
+  generateQuestionsHtml(0);
+});
+
+$('main').click('input[name="answer"]', function(event) {         // IT WORKED!!!    //CLICK EVENT MOVE TO BOTTOM!!!
+  console.log('test button!');
+  
+});
+
+function handleSubmitAnswer(currentAnswer) {
+  $('#question-form').submit('.radio', (event) => {
+    event.preventDefault();
+    if ($('input[name="answer"]:checked'.val() === STORE.questions[STORE.questionNumber].correctAnswer)) {
+      STORE.score++;
+      // renderCorrect();
+    }
+  });
+  return;
+}
+console.log(STORE.score);
+
+
+// $('.test-btn').submit(function( event ) {            // Testing answer
+//   console.log('test answer!');
+// });
+
+// $('').click(function( event ) {                     //Go to next page
+//   console.log('Go to next page');
+
+// });
+
+// $('').click(function( event ) {                     //Restart Quiz
+//   console.log('Restart Quiz');
+
+// });
+
+// RENDERS
+
+renderStartPage();
+// renderQuestionsHtml();
+// renderCorrect();
+// renderIncorrect();
+
+
