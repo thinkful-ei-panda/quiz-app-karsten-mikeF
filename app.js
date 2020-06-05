@@ -27,53 +27,53 @@ function generateStartPage() {
   </div>`;
 }
 /*************************************************** */
+generateQuestionsHtml(0);
+
 
 /*************************************************** */
 
 function generateQuestionsHtml(qNum) {
-  event.preventDefault();
+
   //had to use let because const didn't let us reassign questionHTML as the questions loop.
  
-  let questionHTML = `<div class='question-container'>                            
+  let questionHtml = `<div class='question-container'>                            
     <form id='question-form'>
-      
       <p>Question ${qNum + 1} / 5</p>
       <p>${STORE.questions[qNum].question}</p>`;
   
   for (let i = 0; i < STORE.questions[qNum].answers.length; i++){                             //looping through each question
-    questionHTML += `<div class="m-choice">
+    questionHtml += `<div class="m-choice">
       <input type='radio' id='answer${i}' name='answer' value='${i}' required='required'>
         <label for='answer${i}'>${STORE.questions[qNum].answers[i]}</label>
     </div>`;
   }
-  questionHTML += `<button type="submit" class="test-btn">Test Your Might!</button>
+  questionHtml += `<button type="submit" class="test-btn">Test Your Might!</button>
     </form>
   </div>
   <p>Correct ${STORE.score} / 5</p>`;
 
-  $('main').html(questionHTML);
+  $('main').html(questionHtml);
 }
 
-function generateCorrect() {
-  return `<div class="next-class">
-    <h2> Correct!!! </h2>
-    <button class='next-btn'>On to the next</btn>
-    </div>`;
-}
+// function generateCorrect() {
+//   return `<div class="next-class">
+//     <h2> Correct!!! </h2>
+//     <button class='next-btn'>On to the next</btn>
+//     </div>`;
+// }
 
-function generateIncorrect() {
+// function generateIncorrect() {
+//   return `<div class="next-class">
+//     <h2> Wrong!!! </h2>
+//     <button class='next-btn'>On to the next</btn>
+//     </div>`;
+// }
 
-}
+// function generateResults() {
 
-function generateResults() {
-
-}
+// }
 
 /************************************************************************************************* */
-
-//Iterate through the store
-//When we iterate through an array and return a NEW array with the same length but altered
-////element, use the .map function
 
 /*************************************************************************************************
 
@@ -84,15 +84,16 @@ function renderStartPage() {
   $('main').html(html);
 }
 
-function renderQuestionsHtml() {
+function renderQuestionsHtml(html) {
+  html = generateQuestionsHtml();
   $('main').html(html);
 }
 
-// function renderCorrect() {
-//   const html = generateCorrect();
-//   console.log('rendering correct');
-//   $('main').html(html);
-// }
+function renderCorrect() {
+  const html = generateCorrect();
+  console.log('rendering correct');
+  $('main').html(html);
+}
 
 // function renderIncorrect() {
 //   const html = generateIncorrect();
@@ -100,42 +101,34 @@ function renderQuestionsHtml() {
 //   $('main').html(html);
 // }
 
-
-
-
-// These functions return HTML templates
-
-// generateQuestionsHtml(0);
-// generateQuestionsHtml(1);
-// generateQuestionsHtml(2);
-// generateQuestionsHtml(3);
-// generateQuestionsHtml(4);
-
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
 /********** EVENT HANDLER FUNCTIONS **********/
 
-$('main').click('.action-btn', function(event) {         // IT WORKED!!!    //CLICK EVENT MOVE TO BOTTOM!!!
+$('main').click('action-btn', function() {         // IT WORKED!!!    //CLICK EVENT MOVE TO BOTTOM!!!
   console.log('Quiz Start Commence!');
   generateQuestionsHtml(0);
 });
 
-$('main').click('input[name="answer"]', function(event) {         // IT WORKED!!!    //CLICK EVENT MOVE TO BOTTOM!!!
-  console.log('test button!');
-  
-});
+// $('main').click('input[name="answer"]', function(event) {         // IT WORKED!!!    //CLICK EVENT MOVE TO BOTTOM!!!
+//   console.log('test button!')
+// });
 
-function handleSubmitAnswer(currentAnswer) {
-  $('#question-form').submit('.radio', (event) => {
+function handleSubmitAnswer() {
+
+  $('.m-choice').submit('.radio', function (event) {
     event.preventDefault();
     if ($('input[name="answer"]:checked'.val() === STORE.questions[STORE.questionNumber].correctAnswer)) {
       STORE.score++;
-      // renderCorrect();
+      renderCorrect();
+    } else {
+      renderIncorrect();
     }
   });
   return;
 }
 console.log(STORE.score);
+handleSubmitAnswer();
 
 
 // $('.test-btn').submit(function( event ) {            // Testing answer

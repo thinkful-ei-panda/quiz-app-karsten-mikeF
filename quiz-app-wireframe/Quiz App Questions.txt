@@ -1,0 +1,36 @@
+﻿Welcome to Cinequiz
+Here we test your knowledge of cinema history.
+Karsten Taylor & Mike Fallorina
+
+
+Question 1:
+
+
+Who directed “Back to the Future”?
+1. Robert Zemeckis
+2. James Cameron
+3. Martin Scorcese
+
+
+How many “Terminator” films are there?
+1. 2
+2. 6
+3. 7
+
+
+Who directed “The Departed” ?
+1. Martin Scorcese
+2. Steven Spielberg
+3. George Lucas
+
+
+What year was “Avatar” released?
+1. 2015
+2. 2006
+3. 1999
+
+
+What year was “The Matrix” released?
+1. 2002
+2. 1995
+3. 1999
