@@ -1,5 +1,5 @@
 'use strict';
-$( document ).ready();
+$(document).ready();
 
 /**
  * Example store structure
@@ -10,31 +10,31 @@ const STORE = {
     {
       question: 'Who directed "Back to the Future" ?',
       answers: ['a. Robert Zemeckis', 'b. James Cameron', 'c. Martin Scorsese'],
-      correctAnswer: 'a. Robert Zemeckis'
+      correctAnswer: 'a. Robert Zemeckis',
     },
     {
       question: 'How many "Terminator" films are there?',
       answers: ['a. 2', 'b. 6', 'c. 7'],
-      correctAnswer: 'b. 6'
+      correctAnswer: 'b. 6',
     },
     {
       question: 'Who directed "The Departed" ?',
       answers: ['a. Martin Scorcese', 'b. Steven Spielberg', 'c. George Lucas'],
-      correctAnswer: 'a. 2'
+      correctAnswer: 'a. 2',
     },
     {
       question: 'What year was "Avatar" released?',
       answers: ['a. 2015', 'b. 2006', 'c. 2009'],
-      correctAnswer: 'a. 2015'
+      correctAnswer: 'a. 2015',
     },
     {
       question: 'What year was "The Matrix" released?',
       answers: ['a. 2002', 'b. 1995', 'c. 1999'],
-      correctAnswer: 'c. 1999'
+      correctAnswer: 'c. 1999',
     },
   ],
   quizStarted: false,
   questionNumber: 0,
   score: 0,
-  current: 0
+  current: 0,
 };

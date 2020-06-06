@@ -14,7 +14,7 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
-/* 
+
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Gothic+A1:wght@500;600;700&display=swap');
 
@@ -22,11 +22,13 @@
   margin: 0;
 }
 
+html,
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 main {
@@ -38,23 +40,32 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 100px;
+  margin: auto;
   padding: 20px;
   border: solid 1px;
-  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 .question-container {
   display: flex;
   flex-direction: column;
-  margin: 100px;
+  margin: auto;
   padding: 20px;
   border: solid 1px;
-  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 .question-container p {
   padding: 20px;
+}
+
+.next-class {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  padding: 20px;
+  border: solid 1px;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 form {
@@ -70,7 +81,6 @@ form#question-form {
   justify-content: center;
   align-items: center;
 }
-
 
 label {
   display: flex;
@@ -93,19 +103,29 @@ label {
 
 p {
   font-family: 'Gothic A1', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .action-btn {
   margin: 40px 20px;
   padding: 5px;
   font-family: 'Gothic A1', sans-serif;
-  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 .test-btn {
   margin: 40px 20px;
   padding: 5px;
   font-family: 'Gothic A1', sans-serif;
-  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.50);
-} */
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.next-btn {
+  font-family: 'Gothic A1', sans-serif;
+}
+
+h2 {
+  font-family: 'Anonymous Pro', monospace;
+  text-align: center;
+}
