@@ -124,8 +124,26 @@ p {
 .next-btn {
   font-family: 'Gothic A1', sans-serif;
 }
-
+h1 {
+  font-family: 'Anonymous Pro', monospace;
+  text-align: center;
+}
 h2 {
   font-family: 'Anonymous Pro', monospace;
   text-align: center;
+}
+.results-container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  padding: 20px;
+  border: solid 1px;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.continue-btn {
+  margin: 40px 20px;
+  padding: 5px;
+  font-family: 'Gothic A1', sans-serif;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }

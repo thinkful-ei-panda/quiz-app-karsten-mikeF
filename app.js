@@ -80,7 +80,7 @@ function generateIncorrect() {
 function generateResults() {
   return `<div class="results-container">
   <h1>Results</h1>
-  <p>You scored _ of 5 correct</p>
+  <p>You scored ${STORE.score} of 5 correct</p>
   <button type="submit" class="continue-btn">1UP</button>
 </div>`;
 }
@@ -171,10 +171,14 @@ $('main').on('click', '.next-class .next-btn', function (event) {
   //renderQuestionsHtml(0); //Go to next page
 });
 
-// $('').click(function( event ) {                     //Restart Quiz
-//   console.log('Restart Quiz');
-
-// });
+$('main').on('click', '.results-container .continue-btn', function (event) {
+  if (STORE.score > 0) {
+    STORE.score += 0;
+    generateQuestionsHtml(0);
+  }
+  //Restart Quiz
+  console.log('Restart Quiz');
+});
 
 // RENDERS
 
