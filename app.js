@@ -5,7 +5,7 @@ $(document).ready();
  *
  * Technical requirements:
  *
- * Your app should include a render() function, that regenerates the view each time the store is updated.                                //event handlers go here
+ * Your app should include a render() function, that regenerates the view each time the store is updated.
  * See your course material, consult your instructor, and reference the slides for more details.
  *
  * NO additional HTML elements should be added to the index.html file.
@@ -25,6 +25,7 @@ function generateStartPage() {
     <button type="submit" class="action-btn">ACTION!</button>
   </div>`;
 }
+
 /*************************************************** */
 //generateQuestionsHtml(0);
 
@@ -138,10 +139,10 @@ $('input').on('click', function () {
   console.log('test button!');
 });
 
+//Submits answer and generates correct or incorrect page
 function handleSubmitAnswer() {
   $('main').submit('.test-btn', function (event) {
     event.preventDefault();
-    console.log('Yesss');
     if (
       $('input[name="answer"]:checked').val() ===
       STORE.questions[STORE.questionNumber].correctAnswer
@@ -155,31 +156,32 @@ function handleSubmitAnswer() {
 }
 handleSubmitAnswer();
 
-$('.test-btn').submit(function (event) {
-  // Testing answer
-  console.log('test answer!');
-});
+//For Next Button. Needs work
+function handleNext() {
+  $('main').on('click', '.next-class .next-btn', function (event) {
+    if (STORE.questionNumber >= 4) {
+      return renderResults();
+    } else {
+      STORE.questionNumber++;
+      renderQuestionsHtml(STORE.questionNumber);
+      console.log('Go to next page');
+    }
+    //renderQuestionsHtml(0); //Go to next page
+  });
+}
+handleNext();
 
-$('main').on('click', '.next-class .next-btn', function (event) {
-  if (STORE.questionNumber >= 4) {
-    return renderResults();
-  } else {
-    STORE.questionNumber++;
-    renderQuestionsHtml();
-    console.log('Go to next page');
-  }
-  //renderQuestionsHtml(0); //Go to next page
-});
-
-$('main').on('click', '.results-container .continue-btn', function (event) {
-  if (STORE.score > 0) {
-    STORE.score += 0;
+//Restarts quiz. Needs work.
+function restartQuiz() {
+  $('main').on('click', '.results-container .continue-btn', function (event) {
+    STORE.score = 0;
+    STORE.questionNumber = 0;
     generateQuestionsHtml(0);
-  }
-  //Restart Quiz
-  console.log('Restart Quiz');
-});
-
+    //Restart Quiz
+    console.log('Restart Quiz');
+  });
+}
+restartQuiz();
 // RENDERS
 
 renderStartPage();

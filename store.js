@@ -20,12 +20,12 @@ const STORE = {
     {
       question: 'Who directed "The Departed" ?',
       answers: ['a. Martin Scorcese', 'b. Steven Spielberg', 'c. George Lucas'],
-      correctAnswer: 'a. 2',
+      correctAnswer: 'a. Martin Scorcese',
     },
     {
       question: 'What year was "Avatar" released?',
       answers: ['a. 2015', 'b. 2006', 'c. 2009'],
-      correctAnswer: 'a. 2015',
+      correctAnswer: 'c. 2009',
     },
     {
       question: 'What year was "The Matrix" released?',
