@@ -51,14 +51,6 @@ function generateQuestionsHtml(qNum) {
   $('main').html(html);
 }
 
-// function generateAmountCorrect() {
-//   return `<div>
-//   <p>Question: ${STORE.questionNumber} of 5</p>
-//   <p>Current score: ${STORE.score} of 5</p>
-//   </div>`;
-//   //generates the amount correct
-// }
-
 function generateCorrect() {
   return `<div class='next-class'>
       <h2 class="correct">That is correct!</h2>
@@ -130,11 +122,12 @@ function renderResults() {
 function handleStartPage() {
   $('main').on('click', '.welcome-container .action-btn', function () {
     console.log('Quiz Start Commence!');
-    generateQuestionsHtml(0);
+    renderStartPage();
+    // generateQuestionsHtml(0);
   });
 
 }
-handleStartPage();
+// handleStartPage();
 
 //Submits answer and generates correct or incorrect page
 function handleSubmitAnswer() {
@@ -166,7 +159,7 @@ function handleNext() {
     // renderQuestionsHtml(); //Go to next page
   });
 }
-handleNext();
+// handleNext();
 
 //Restarts quiz. Needs work.
 function handleRestartQuiz() {
@@ -180,7 +173,7 @@ function handleRestartQuiz() {
   });
   render();
 }
-handleRestartQuiz();
+// handleRestartQuiz();
 
 
 // RENDERS
@@ -198,4 +191,4 @@ function render() {
   handleRestartQuiz();
 }
 
-$(render);
+render();
