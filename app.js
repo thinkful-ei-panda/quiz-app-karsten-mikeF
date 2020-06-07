@@ -122,12 +122,12 @@ function renderResults() {
 function handleStartPage() {
   $('main').on('click', '.welcome-container .action-btn', function () {
     console.log('Quiz Start Commence!');
-    renderStartPage();
-    // generateQuestionsHtml(0);
+    // renderStartPage();
+    generateQuestionsHtml(0);
   });
 
 }
-// handleStartPage();
+handleStartPage();
 
 //Submits answer and generates correct or incorrect page
 function handleSubmitAnswer() {
@@ -159,7 +159,7 @@ function handleNext() {
     // renderQuestionsHtml(); //Go to next page
   });
 }
-// handleNext();
+handleNext();
 
 //Restarts quiz. Needs work.
 function handleRestartQuiz() {
@@ -173,7 +173,7 @@ function handleRestartQuiz() {
   });
   render();
 }
-// handleRestartQuiz();
+handleRestartQuiz();
 
 
 // RENDERS
