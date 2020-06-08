@@ -26,21 +26,19 @@ function generateStartPage() {
   </div>`;
 }
 
-/*************************************************** */
-
-function generateQuestionsHtml(qNum) {
+function generateQuestionsHtml(num) {
   //had to use let because const didn't let us reassign html as the questions loop.
 
   let html = `<div class='question-container'>                            
     <form id='question-form'>
-      <h2>Question ${qNum + 1} / 5</h2>
-      <p>${STORE.questions[qNum].question}</p>`;
+      <h2>Question ${num + 1} / 5</h2>
+      <p>${STORE.questions[num].question}</p>`;
 
-  for (let i = 0; i < STORE.questions[qNum].answers.length; i++) {
+  for (let i = 0; i < STORE.questions[num].answers.length; i++) {
     //looping through each answer to display answers
     html += `<div class="m-choice">
-    <input type='radio' name='answer' id='answer${i}' value='${STORE.questions[qNum].answers[i]}' required>
-    <label for='answer${i}'>${STORE.questions[qNum].answers[i]}</label>
+    <input type='radio' name='answer' id='answer${i}' value='${STORE.questions[num].answers[i]}' required>
+    <label for='answer${i}'>${STORE.questions[num].answers[i]}</label>
     </div>`;
   }
   html += `<button type="submit" class="test-btn">Test Your Might!</button>
@@ -81,12 +79,10 @@ function generateResults() {
 </div>`;
 }
 
-/************************************************************************************************* */
-
 /********** RENDER FUNCTION(S) **********/
 
 function renderStartPage() {
-  const html = generateStartPage(); //                                                  call to generate start page
+  const html = generateStartPage(); // 
   $('main').html(html);
 }
 
@@ -117,15 +113,14 @@ function renderResults() {
 
 /********** EVENT HANDLER FUNCTIONS **********/
 
+// Handles loading Cinequiz start page
 function handleStartPage() {
   $('main').on('click', '.welcome-container .action-btn', function () {
     console.log('Quiz Start Commence!');
-    // renderStartPage();
     generateQuestionsHtml(0);
   });
-
 }
-handleStartPage();
+
 
 //Submits answer and generates correct or incorrect page
 function handleSubmitAnswer() {
@@ -142,9 +137,9 @@ function handleSubmitAnswer() {
     }
   });
 }
-handleSubmitAnswer();
 
-//For Next Button. Needs work
+
+// Listens for next button click, adds correct to count and renders the next question page
 function handleNext() {
   $('main').on('click', '.next-class .next-btn', function (event) {
     if (STORE.questionNumber >= 4) {
@@ -157,9 +152,9 @@ function handleNext() {
     // renderQuestionsHtml(); //Go to next page
   });
 }
-handleNext();
 
-//Restarts quiz. Needs work.
+
+// Resets counters to 0.  Redirects back to Start Page.
 function handleRestartQuiz() {
   $('main').on('click', '.results-container .continue-btn', function (event) {
     STORE.score = 0;
@@ -169,24 +164,20 @@ function handleRestartQuiz() {
     //Restart Quiz
     console.log('Restart Quiz');
   });
-  render();
 }
 handleRestartQuiz();
 
 
-// RENDERS
+// RENDER FUNCTION
 
 
 function render() {
   renderStartPage();
-  renderQuestionsHtml();
-  renderCorrect();
-  renderIncorrect();
-  renderResults();
   handleStartPage();
   handleSubmitAnswer();
   handleNext();
-  handleRestartQuiz();
+  renderQuestionsHtml();
+  renderResults();
 }
 
 render();
