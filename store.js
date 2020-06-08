@@ -33,7 +33,6 @@ const STORE = {
       correctAnswer: 'c. 1999',
     },
   ],
-  quizStarted: false,
   questionNumber: 0,
   score: 0,
 };

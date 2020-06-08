@@ -1,10 +1,11 @@
-### Boilerplate app structure for Quiz App project
-
-
  ###  Quiz App
  
-Michael Fallorina & Karsten Taylor
+This was a paired project worked on by Michael Fallorina & Karsten Taylor.
 
 This quiz will test your knowledge of Cinema History.
 
+**Link to GitHub Repo**
+https://github.com/thinkful-ei-panda/quiz-app-karsten-mikeF
+
 **Live Link** 
+https://thinkful-ei-panda.github.io/quiz-app-karsten-mikeF/

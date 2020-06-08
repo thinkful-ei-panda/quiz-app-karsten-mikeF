@@ -112,7 +112,6 @@ function renderResults() {
   $('main').html(html);
 }
 
-
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // Handles loading Cinequiz start page
@@ -143,7 +142,7 @@ function handleSubmitAnswer() {
 function handleNext() {
   $('main').on('click', '.next-class .next-btn', function (event) {
     if (STORE.questionNumber >= 4) {
-      return renderResults();
+      renderResults();
     } else {
       STORE.questionNumber++;
       renderQuestionsHtml(STORE.questionNumber);
@@ -152,7 +151,6 @@ function handleNext() {
     // renderQuestionsHtml(); //Go to next page
   });
 }
-
 
 // Resets counters to 0.  Redirects back to Start Page.
 function handleRestartQuiz() {
@@ -166,18 +164,16 @@ function handleRestartQuiz() {
   });
 }
 
-
 // RENDER FUNCTION
 
-
 function render() {
-  renderStartPage();
   handleStartPage();
   handleSubmitAnswer();
   handleNext();
   renderQuestionsHtml();
   renderResults();
   handleRestartQuiz();
+  renderStartPage();
 }
 
 $(render);

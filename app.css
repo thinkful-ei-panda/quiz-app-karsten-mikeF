@@ -8,13 +8,6 @@
 */
 /* Your styles should be mobile-first and responsive */
 
-/** 
-  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
-  *
-  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
-  *
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Gothic+A1:wght@500;600;700&display=swap');
 
@@ -66,7 +59,6 @@ main {
   border: solid 1px;
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
-
 
 .question-container p:first-child {
   padding: 20px;
@@ -167,7 +159,6 @@ h2 {
   background-size: 100%;
   display: flex;
   flex-direction: column;
-  /* margin: 100px; */
   padding: 20px;
   border: solid 1px;
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
