@@ -36,5 +36,4 @@ const STORE = {
   quizStarted: false,
   questionNumber: 0,
   score: 0,
-  current: 0,
 };
