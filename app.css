@@ -36,6 +36,9 @@ main {
 }
 
 .welcome-container {
+  background-image: url(../images/filmroll.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +49,14 @@ main {
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
+.welcome-container h1 {
+  margin-top: 60px;
+}
+
 .question-container {
+  background-image: url(../images/filmroll.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -55,11 +65,16 @@ main {
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
-.question-container p {
+
+.question-container p:first-child {
   padding: 20px;
+  margin-top: 40px;
 }
 
 .next-class {
+  background-image: url(../images/filmroll.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   /* margin: 100px; */
@@ -128,6 +143,7 @@ p {
 .next-btn {
   font-family: 'Gothic A1', sans-serif;
   padding: 10px;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -139,8 +155,13 @@ h2 {
   font-family: 'Anonymous Pro', monospace;
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 60px;
+
 }
 .results-container {
+  background-image: url(../images/filmroll.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   /* margin: 100px; */

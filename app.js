@@ -33,7 +33,7 @@ function generateQuestionsHtml(qNum) {
 
   let html = `<div class='question-container'>                            
     <form id='question-form'>
-      <p>Question ${qNum + 1} / 5</p>
+      <h2>Question ${qNum + 1} / 5</h2>
       <p>${STORE.questions[qNum].question}</p>`;
 
   for (let i = 0; i < STORE.questions[qNum].answers.length; i++) {
@@ -54,8 +54,8 @@ function generateQuestionsHtml(qNum) {
 function generateCorrect() {
   return `<div class='next-class'>
       <h2 class="correct">That is correct!</h2>
-      <p>"Where we're going, we don't need roads."</p>
-      <p class="align-right italic">-Doc Brown</p>
+      <p>"Roads?  Where we're going, we don't need roads."</p>
+      <p class="align-right italic">-Back to the Future</p>
       <button class='next-btn'>On to the next</button>
   </div>`;
   //generates a correct answer page
@@ -65,7 +65,7 @@ function generateIncorrect() {
   return `<div class='next-class'>
       <h2 class="incorrect">Incorrect!</h2>
       <p>"There's no crying in baseball!."</p>
-      <p class="align-right italic">-Jimmy Dugan</p>
+      <p class="align-right italic">-A League of Their Own</p>
       <button class='next-btn'>On to the next one</button>
   </div>`;
   //generates an incorrect answer page
@@ -73,15 +73,13 @@ function generateIncorrect() {
 
 function generateResults() {
   return `<div class="results-container">
-  <h1>Results</h1>
+  <h2>Results</h2>
   <p class="bottom-margin">You scored ${STORE.score} of 5 correct</p>
-  <p class="italic">"Try not.  Do - or not.  There is no try."</p>
-  <p class="align-right italic">-Yoda</p>
-  <button type="submit" class="continue-btn">"There's no place like home"</button>
+  <p class="italic">"No. Try not.  Do.  Or do not.  There is no try."</p>
+  <p class="align-right italic">-The Empire Strikes Back.</p>
+  <button type="submit" class="continue-btn">Restart Quiz</button>
 </div>`;
 }
-
-// }
 
 /************************************************************************************************* */
 
