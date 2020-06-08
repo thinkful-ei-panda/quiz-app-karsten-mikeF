@@ -74,7 +74,7 @@ function generateResults() {
   //generates results page
   return `<div class="results-container">
   <h2>Results</h2>
-  <p class="bottom-margin bold">You scored ${STORE.score} of 5 correct</p>
+  <p class="bottom-margin bold correct">You scored ${STORE.score} of 5 correct</p>
   <p class="italic">"No. Try not.  Do.  Or do not.  There is no try."</p>
   <p class="align-right italic">-The Empire Strikes Back.</p>
   <button type="submit" class="continue-btn">Restart Quiz</button>
