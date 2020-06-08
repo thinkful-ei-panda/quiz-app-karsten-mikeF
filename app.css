@@ -31,7 +31,7 @@ main {
 }
 
 .welcome-container {
-  background-image: url(../images/filmroll.png);
+  background-image: url(images/filmroll.png);
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -49,7 +49,7 @@ main {
 }
 
 .question-container {
-  background-image: url(../images/filmroll.png);
+  background-image: url(images/filmroll.png);
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -66,7 +66,7 @@ main {
 }
 
 .next-class {
-  background-image: url(../images/filmroll.png);
+  background-image: url(images/filmroll.png);
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -154,7 +154,7 @@ h2 {
 
 }
 .results-container {
-  background-image: url(../images/filmroll.png);
+  background-image: url(images/filmroll.png);
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
